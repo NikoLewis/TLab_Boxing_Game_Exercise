@@ -67,7 +67,7 @@ Player 1 is the WINNER! 🏆
 1. Review requirements and expectations
 2. Create detailed readme
 3. Create a new public GitHub Repo
-  - adding instructors as contributers if needed
+  - adding instructors as contributors if needed
 4. Create file required file structure
   - boxing.js   
 5. Proceed with assignment instructions
