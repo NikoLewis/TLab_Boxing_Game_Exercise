@@ -12,7 +12,7 @@ let displayedText;
         displayedText = document.getElementById('boxing-ring');
         if (displayedText) {
           // Do something with the element
-          displayedText.textContent = `${player1.health}`;
+          displayedText.innerHTML = `${player1.health} <br />`;
 
           //Function to generate random damage
 function generateDamage() {
@@ -23,13 +23,13 @@ function generateDamage() {
 function applyDamage(opponent, damage) {
     if ( damage < 6 /* FILL CONDITIONAL HERE */) {
     console.log(`${currentPlayer.name} lands a basic hit on ${opponent.name}!`);
-    displayedText.textContent += `${currentPlayer.name} lands a basic hit on ${opponent.name}!`;
+    displayedText.innerHTML += `${currentPlayer.name} lands a basic hit on ${opponent.name}! <br />`;
     } else if (damage >= 6 && damage <= 9 /* FILL CONDITIONAL HERE */) {
     console.log(`${currentPlayer.name} lands a critical hit on ${opponent.name}!`);
-    displayedText.textContent += `${currentPlayer.name} lands a critical hit on ${opponent.name}!`;
+    displayedText.innerHTML += `${currentPlayer.name} lands a critical hit on ${opponent.name}!<br />`;
     } else {
     console.log(`${currentPlayer.name} lands a KNOCKOUT on ${opponent.name}!🥊`);
-    displayedText.textContent += `${currentPlayer.name} lands a KNOCKOUT on ${opponent.name}!🥊`
+    displayedText.innerHTML += `${currentPlayer.name} lands a KNOCKOUT on ${opponent.name}!🥊<br />`
     }
     opponent.health -= damage;
     if (opponent.health <= 0 || damage >= 10/* FILL CONDITIONAL HERE */) {
@@ -75,12 +75,13 @@ function switchTurns() {
       let greeting = "Starting the Boxing Game!";
       console.log(greeting);
       console.log('we are within the start game function');
-      displayedText.textContent = `${greeting}`;
+      displayedText.innerHTML = `${greeting} <br />`;
       console.log(`${player1.name} vs ${player2.name}`);
       while (player1.health > 0 && player2.health > 0) {
       if (!playTurn()) break; // Stop the game if there's a knockout
     }
     console.log("Game Over. Thanks for playing!");
+    displayedText.innerHTML += `<br />Game Over. Thanks for playing!<br />`
     }
     // Start the game
     startGame();
